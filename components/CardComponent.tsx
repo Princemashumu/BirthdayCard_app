@@ -1,77 +1,77 @@
-// components/CardComponent.tsx
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, Image, Button } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { FontAwesome } from 'react-native-vector-icons'; // Import FontAwesome icons
+import CardComponentStyles from '../styles/CardComponentStyles'; // Import the styles
 
 const CardComponent: React.FC = () => {
   const [text, setText] = useState<string>('');
   const [image, setImage] = useState<string | null>(null);
 
-  // Function to pick an image from the library
-  const pickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
+  const birthdayIcons = [
+    { name: 'cake', icon: 'birthday-cake' },
+    { name: 'balloon', icon: 'glass-cheers' },
+    { name: 'gift', icon: 'gift' }
+  ];
 
-    if (!result.canceled && result.assets) {
-      setImage(result.assets[0].uri);
+  const pickIcon = (iconName: string) => {
+    setImage(iconName);
+  };
+
+  const saveImage = () => {
+    if (image) {
+      console.log("Image saved:", image);
+    } else {
+      console.log("No image to save.");
     }
   };
 
   return (
-    <View style={styles.card}>
-      {/* Display selected image */}
-      {image && <Image source={{ uri: image }} style={styles.image} />}
+    <View style={CardComponentStyles.container}>
+      {/* A4 Placeholder with border */}
+      <View style={CardComponentStyles.a4Placeholder}>
+        {image && (
+          <FontAwesome name={image} size={200} color="#f39c12" style={CardComponentStyles.icon} />
+        )}
 
-      {/* Text input for user message */}
-      <TextInput
-        style={styles.textInput}
-        placeholder="Add a birthday message..."
-        onChangeText={setText}
-        value={text}
-      />
-      <Text style={styles.text}>{text}</Text>
+        <Text style={CardComponentStyles.text}>{text}</Text>
+      </View>
 
-      {/* Button to select an image */}
-      <Button title="Pick an Image" onPress={pickImage} />
+      <View style={CardComponentStyles.iconsContainer}>
+        <TextInput
+          style={CardComponentStyles.textInput}
+          placeholder="Add a birthday message..."
+          onChangeText={setText}
+          value={text}
+        />
+        {birthdayIcons.map((icon) => (
+          <TouchableOpacity
+          key={icon.name}
+          onPress={() => pickIcon(icon.icon)}
+          style={CardComponentStyles.iconButton}
+          >
+            <FontAwesome name={icon.icon} size={50} color="#f39c12" />
+            <Text>{icon.name}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      <View style={CardComponentStyles.buttonsContainer}>
+        <View style={CardComponentStyles.buttonBox}>
+          <TouchableOpacity style={CardComponentStyles.button} onPress={saveImage}>
+            <FontAwesome name="save" size={20} color="#fff" />
+            <Text style={CardComponentStyles.buttonText}>Save</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={CardComponentStyles.buttonBox}>
+          <TouchableOpacity style={CardComponentStyles.button} onPress={() => setImage(null)}>
+            <FontAwesome name="eye" size={20} color="#fff" />
+            <Text style={CardComponentStyles.buttonText}>Preview</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    padding: 20,
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 5,
-    alignItems: 'center',
-  },
-  textInput: {
-    fontSize: 18,
-    textAlign: 'center',
-    marginTop: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    padding: 5,
-    width: '100%',
-  },
-  image: {
-    width: 200,
-    height: 200,
-    borderRadius: 10,
-    marginTop: 10,
-  },
-  text: {
-    fontSize: 20,
-    marginTop: 10,
-  },
-});
 
 export default CardComponent;
