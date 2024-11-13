@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, TextInput as RNTextInput } from 'react-native';
-import { FontAwesome } from 'react-native-vector-icons';
-import CardComponentStyles from '../styles/CardComponentStyles'; // Import your custom styles
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
+import CardComponentStyles from '../styles/CardComponentStyles'; // Import custom styles
 
 const CardComponent: React.FC = () => {
   const [text, setText] = useState<string>(''); 
@@ -17,18 +17,15 @@ const CardComponent: React.FC = () => {
 
   const birthdayIcons = [
     { name: 'cake', icon: 'birthday-cake' },
-    { name: 'balloon', icon: 'glass-cheers' },
     { name: 'gift', icon: 'gift' },
     { name: 'star', icon: 'star' },
     { name: 'heart', icon: 'heart' },
-    { name: 'smile', icon: 'smile' },
-    { name: 'tree', icon: 'tree' },
     { name: 'trophy', icon: 'trophy' },
     { name: 'thumbs-up', icon: 'thumbs-up' },
     { name: 'camera', icon: 'camera' },
-    { name: 'paw', icon: 'paw' },
-    { name: 'globe', icon: 'globe' }
+    { name: 'paw', icon: 'paw' }
   ];
+  
 
   const pickIcon = (iconName: string) => {
     setImage(iconName);
@@ -94,21 +91,21 @@ const CardComponent: React.FC = () => {
       {/* If in edit mode, show the TextInput again to edit */}
       {isEditing && (
         <View>
-          <TextInput
+          {/* <TextInput
             style={CardComponentStyles.textInput}
             placeholder="Edit your message..."
             onChangeText={setText}
             value={text}
-          />
+          /> */}
           {/* Font Family Input */}
-          <RNTextInput
+          <TextInput
             style={styles.input}
             value={fontFamily}
             onChangeText={setFontFamily}
             placeholder="Font Family"
           />
           {/* Font Size Input */}
-          <RNTextInput
+          <TextInput
             style={styles.input}
             value={String(fontSize)}
             keyboardType="numeric"
@@ -116,14 +113,14 @@ const CardComponent: React.FC = () => {
             placeholder="Font Size"
           />
           {/* Color Input */}
-          <RNTextInput
+          <TextInput
             style={styles.input}
             value={color}
             onChangeText={setColor}
             placeholder="Text Color"
           />
           {/* Position Input */}
-          <RNTextInput
+          <TextInput
             style={styles.input}
             value={position}
             onChangeText={setPosition}
@@ -141,7 +138,7 @@ const CardComponent: React.FC = () => {
               onPress={() => pickIcon(icon.icon)}
               style={styles.iconButton}
             >
-              <FontAwesome name={icon.icon} size={40} color="#f39c12" />
+              <FontAwesome name={icon.icon} size={20} color="#f39c12" />
               <Text style={styles.iconText}>{icon.name}</Text>
             </TouchableOpacity>
           ))}
@@ -171,10 +168,9 @@ const CardComponent: React.FC = () => {
 // Styles for the icons row and grid
 const styles = StyleSheet.create({
   iconRow: {
-    display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     marginTop: 10,
     width: '100%',
   },
@@ -196,11 +192,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   input: {
-    height: 40,
+    height: 30,
+    width:200,
     borderColor: '#ddd',
     borderWidth: 1,
-    marginBottom: 10,
-    paddingLeft: 10,
+    marginBottom: 5,
+    paddingLeft: 5,
     marginTop: 5,
   },
 });

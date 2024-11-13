@@ -12,6 +12,7 @@ const CardComponentStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    width:'100%'
   },
   a4Placeholder: {
     width: A4_WIDTH,
