@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image,Keyboard  } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import CardComponentStyles from '../styles/CardComponentStyles'; // Import custom styles
 
 const CardComponent: React.FC = () => {
-  const [text, setText] = useState<string>(''); 
-  const [image, setImage] = useState<string | null>(null);
+  const [text, setText] = useState<string>('Happy Birthday!');
+  const [image, setImage] = useState<string | null>('birthday-cake');  // Default image (icon)
   const [isTextInputVisible, setIsTextInputVisible] = useState<boolean>(false);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
@@ -13,8 +13,9 @@ const CardComponent: React.FC = () => {
   const [fontFamily, setFontFamily] = useState<string>('Arial');
   const [fontSize, setFontSize] = useState<number>(16);
   const [color, setColor] = useState<string>('#000');
-  const [position, setPosition] = useState<string>('left');
+  const [position, setPosition] = useState<string>('center');
 
+  // Available icons for birthday card
   const birthdayIcons = [
     { name: 'cake', icon: 'birthday-cake' },
     { name: 'gift', icon: 'gift' },
@@ -25,7 +26,6 @@ const CardComponent: React.FC = () => {
     { name: 'camera', icon: 'camera' },
     { name: 'paw', icon: 'paw' }
   ];
-  
 
   const pickIcon = (iconName: string) => {
     setImage(iconName);
@@ -35,43 +35,76 @@ const CardComponent: React.FC = () => {
     setIsTextInputVisible(!isTextInputVisible);
   };
 
-  const saveImage = () => {
-    if (image) {
-      console.log("Image saved:", image);
-    } else {
-      console.log("No image to save.");
+  const toggleEdit = () => {
+    setIsEditing(!isEditing);
+    if (isEditing) {
+      // Reset font settings to default values
+      setFontFamily('Arial');
+      setFontSize(16);
+      setColor('#000');
+      setPosition('center');
     }
   };
 
-  const toggleEdit = () => {
-    setIsEditing(!isEditing);
+  const handleFontSizeChange = (value: string) => {
+    if (!isNaN(Number(value))) {
+      setFontSize(Number(value));
+    } else {
+      alert('Font size must be a number.');
+    }
+  };
+
+  const handleColorChange = (value: string) => {
+    if (/^#[0-9A-F]{6}$/i.test(value)) {
+      setColor(value);
+    } else {
+      alert('Please enter a valid hex color code.');
+    }
+  };
+
+  // Function to split the text into individual characters for rotation
+  const renderCurvedText = (text: string) => {
+    const radius = 150; // Radius of the circle
+    const angleBetweenLetters = 15; // Angle between each letter
+    
+    return text.split('').map((char, index) => {
+      const angle = angleBetweenLetters * index - (angleBetweenLetters * (text.length - 1)) / 2;
+      const transform = `rotate(${angle}deg) translateY(-${radius}px)`;
+
+      return (
+        <Text key={index} style={[styles.curvedText, { transform: [{ rotate: `${angle}deg` }, { translateY: -radius }] }]}>
+          {char}
+        </Text>
+      );
+    });
   };
 
   return (
     <View style={CardComponentStyles.container}>
-      {/* A4 Placeholder with border */}
+      {/* Default Birthday Card */}
       <View style={CardComponentStyles.a4Placeholder}>
         {image && (
-          <FontAwesome name={image} size={100} color="#f39c12" style={CardComponentStyles.icon} />
+          <FontAwesome name={image} size={200} color="#f39c12" style={CardComponentStyles.icon} />
         )}
-        <Text style={[CardComponentStyles.text, { fontFamily, fontSize, color, textAlign: position }]}>{text}</Text>
+        
+        {/* Render Curved Text */}
+        <View style={styles.textContainer}>
+          {renderCurvedText(text)}
+        </View>
       </View>
 
       {/* Text and Icons icons in a row */}
       <View style={styles.iconRow}>
-        {/* Text icon */}
         <TouchableOpacity onPress={toggleTextInput} style={styles.iconButton}>
           <FontAwesome name="text-height" size={20} color="#f39c12" />
           <Text style={styles.iconText}>Text</Text>
         </TouchableOpacity>
 
-        {/* Edit icon */}
         <TouchableOpacity onPress={toggleEdit} style={styles.iconButton}>
           <FontAwesome name="edit" size={20} color="#f39c12" />
           <Text style={styles.iconText}>Edit</Text>
         </TouchableOpacity>
 
-        {/* Icons icon */}
         <TouchableOpacity onPress={() => setImage(null)} style={styles.iconButton}>
           <FontAwesome name="image" size={20} color="#f39c12" />
           <Text style={styles.iconText}>Upload</Text>
@@ -82,7 +115,7 @@ const CardComponent: React.FC = () => {
       {isTextInputVisible && (
         <TextInput
           style={CardComponentStyles.textInput}
-          placeholder="Add a birthday message..."
+          placeholder="Edit your message..."
           onChangeText={setText}
           value={text}
         />
@@ -91,12 +124,9 @@ const CardComponent: React.FC = () => {
       {/* If in edit mode, show the TextInput again to edit */}
       {isEditing && (
         <View>
-          {/* <TextInput
-            style={CardComponentStyles.textInput}
-            placeholder="Edit your message..."
-            onChangeText={setText}
-            value={text}
-          /> */}
+          <Text style={[CardComponentStyles.text, { fontFamily, fontSize, color, textAlign: position }]}>
+            Preview: {text || 'Your text here'}
+          </Text>
           {/* Font Family Input */}
           <TextInput
             style={styles.input}
@@ -109,15 +139,15 @@ const CardComponent: React.FC = () => {
             style={styles.input}
             value={String(fontSize)}
             keyboardType="numeric"
-            onChangeText={(text) => setFontSize(Number(text))}
+            onChangeText={handleFontSizeChange}
             placeholder="Font Size"
           />
           {/* Color Input */}
           <TextInput
             style={styles.input}
             value={color}
-            onChangeText={setColor}
-            placeholder="Text Color"
+            onChangeText={handleColorChange}
+            placeholder="Text Color (e.g., #FF5733)"
           />
           {/* Position Input */}
           <TextInput
@@ -148,7 +178,7 @@ const CardComponent: React.FC = () => {
       {/* Buttons */}
       <View style={CardComponentStyles.buttonsContainer}>
         <View style={CardComponentStyles.buttonBox}>
-          <TouchableOpacity style={CardComponentStyles.button} onPress={saveImage}>
+          <TouchableOpacity style={CardComponentStyles.button}>
             <FontAwesome name="save" size={20} color="#fff" />
             <Text style={CardComponentStyles.buttonText}>Save</Text>
           </TouchableOpacity>
@@ -165,7 +195,7 @@ const CardComponent: React.FC = () => {
   );
 };
 
-// Styles for the icons row and grid
+// Styles for curved text effect
 const styles = StyleSheet.create({
   iconRow: {
     alignItems: 'center',
@@ -193,12 +223,27 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 30,
-    width:200,
+    width: 200,
     borderColor: '#ddd',
     borderWidth: 1,
     marginBottom: 5,
     paddingLeft: 5,
     marginTop: 5,
+  },
+  textContainer: {
+    position: 'relative',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  curvedText: {
+    position: 'absolute',
+    fontSize: 30,
+    color: '#000',
+    fontFamily: 'Arial',
+    textAlign: 'center',
+    fontWeight:'bold',
+    bottom:150
   },
 });
 
