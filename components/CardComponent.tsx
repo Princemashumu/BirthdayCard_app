@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image,Keyboard  } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import CardComponentStyles from '../styles/CardComponentStyles'; // Import custom styles
 
@@ -14,6 +14,7 @@ const CardComponent: React.FC = () => {
   const [fontSize, setFontSize] = useState<number>(16);
   const [color, setColor] = useState<string>('#000');
   const [position, setPosition] = useState<string>('center');
+  const positionOptions = ['left', 'center', 'right'];
 
   // Available icons for birthday card
   const birthdayIcons = [
@@ -46,13 +47,16 @@ const CardComponent: React.FC = () => {
     }
   };
 
+
   const handleFontSizeChange = (value: string) => {
-    if (!isNaN(Number(value))) {
-      setFontSize(Number(value));
+    const numberValue = Number(value);
+    if (!isNaN(numberValue) && numberValue >= 8 && numberValue <= 100) {
+      setFontSize(numberValue);
     } else {
-      alert('Font size must be a number.');
+      alert('Font size must be a number between 8 and 100.');
     }
   };
+  
 
   const handleColorChange = (value: string) => {
     if (/^#[0-9A-F]{6}$/i.test(value)) {
@@ -79,6 +83,16 @@ const CardComponent: React.FC = () => {
     });
   };
 
+  const iconButtonStyle = (isSelected: boolean) => ({
+    alignItems: 'center',
+    marginBottom: 10,
+    width: 60,
+    marginHorizontal: 10,
+    backgroundColor: isSelected ? '#f39c12' : 'transparent', // Highlight selected icon
+    borderRadius: 8,
+  });
+  
+
   return (
     <View style={CardComponentStyles.container}>
       {/* Default Birthday Card */}
@@ -92,6 +106,9 @@ const CardComponent: React.FC = () => {
           {renderCurvedText(text)}
         </View>
       </View>
+
+
+      
 
       {/* Text and Icons icons in a row */}
       <View style={styles.iconRow}>
