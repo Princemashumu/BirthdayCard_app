@@ -1,204 +1,239 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  ScrollView,
+} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import CardComponentStyles from '../styles/CardComponentStyles'; // Import custom styles
+import * as ImagePicker from 'expo-image-picker';
+import * as FileSystem from 'expo-file-system';
 
 const CardComponent: React.FC = () => {
-  const [text, setText] = useState<string>(''); 
-  const [image, setImage] = useState<string | null>(null);
+  const [text, setText] = useState<string>('');
+  const [imageUri, setImageUri] = useState<string | null>(null);
   const [isTextInputVisible, setIsTextInputVisible] = useState<boolean>(false);
-  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [emoji, setEmoji] = useState<string>('🎉');
 
-  // Font settings
-  const [fontFamily, setFontFamily] = useState<string>('Arial');
-  const [fontSize, setFontSize] = useState<number>(16);
-  const [color, setColor] = useState<string>('#000');
-  const [position, setPosition] = useState<string>('left');
+  const emojis = ['🎉', '🎂', '🎁', '❤️', '🌟', '🎈', '🎵', '🍰', '🍔', '🐾'];
 
-  const birthdayIcons = [
-    { name: 'cake', icon: 'birthday-cake' },
-    { name: 'gift', icon: 'gift' },
-    { name: 'star', icon: 'star' },
-    { name: 'heart', icon: 'heart' },
-    { name: 'trophy', icon: 'trophy' },
-    { name: 'thumbs-up', icon: 'thumbs-up' },
-    { name: 'camera', icon: 'camera' },
-    { name: 'paw', icon: 'paw' }
-  ];
-  
+  // Pick an image from the gallery
+  const pickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
 
-  const pickIcon = (iconName: string) => {
-    setImage(iconName);
-  };
-
-  const toggleTextInput = () => {
-    setIsTextInputVisible(!isTextInputVisible);
-  };
-
-  const saveImage = () => {
-    if (image) {
-      console.log("Image saved:", image);
-    } else {
-      console.log("No image to save.");
+    if (!result.canceled) {
+      setImageUri(result.assets[0].uri);
     }
   };
 
-  const toggleEdit = () => {
-    setIsEditing(!isEditing);
+  // Save the card to local storage
+  const saveCardToLocalStorage = async () => {
+    const cardData = {
+      text,
+      imageUri,
+      emoji,
+    };
+
+    try {
+      const existingCards = JSON.parse(
+        await FileSystem.readAsStringAsync(
+          `${FileSystem.documentDirectory}cards.json`
+        )
+      );
+      const updatedCards = existingCards ? [...existingCards, cardData] : [cardData];
+      await FileSystem.writeAsStringAsync(
+        `${FileSystem.documentDirectory}cards.json`,
+        JSON.stringify(updatedCards)
+      );
+      alert('Card saved successfully!');
+    } catch (error) {
+      await FileSystem.writeAsStringAsync(
+        `${FileSystem.documentDirectory}cards.json`,
+        JSON.stringify([cardData])
+      );
+      alert('Card saved successfully!');
+    }
   };
 
+  // Toggle text input visibility
+  const toggleTextInput = () => setIsTextInputVisible(!isTextInputVisible);
+
   return (
-    <View style={CardComponentStyles.container}>
-      {/* A4 Placeholder with border */}
-      <View style={CardComponentStyles.a4Placeholder}>
-        {image && (
-          <FontAwesome name={image} size={100} color="#f39c12" style={CardComponentStyles.icon} />
+    <ScrollView contentContainerStyle={styles.container}>
+      {/* Card preview */}
+      <View style={styles.cardPreview}>
+        {imageUri ? (
+          <Image source={{ uri: imageUri }} style={styles.image} />
+        ) : (
+          <FontAwesome name="image" size={100} color="#e0e0e0" />
         )}
-        <Text style={[CardComponentStyles.text, { fontFamily, fontSize, color, textAlign: position }]}>{text}</Text>
+        <Text style={styles.emoji}>{emoji}</Text>
+        <Text style={styles.cardText}>{text}</Text>
       </View>
 
-      {/* Text and Icons icons in a row */}
-      <View style={styles.iconRow}>
-        {/* Text icon */}
-        <TouchableOpacity onPress={toggleTextInput} style={styles.iconButton}>
-          <FontAwesome name="text-height" size={20} color="#f39c12" />
-          <Text style={styles.iconText}>Text</Text>
+      {/* Action buttons */}
+      <View style={styles.actionRow}>
+        <TouchableOpacity onPress={toggleTextInput} style={styles.actionButton}>
+          <FontAwesome name="text-height" size={24} color="#6c5ce7" />
+          <Text style={styles.actionText}>Text</Text>
         </TouchableOpacity>
 
-        {/* Edit icon */}
-        <TouchableOpacity onPress={toggleEdit} style={styles.iconButton}>
-          <FontAwesome name="edit" size={20} color="#f39c12" />
-          <Text style={styles.iconText}>Edit</Text>
+        <TouchableOpacity onPress={pickImage} style={styles.actionButton}>
+          <FontAwesome name="upload" size={24} color="#6c5ce7" />
+          <Text style={styles.actionText}>Upload</Text>
         </TouchableOpacity>
 
-        {/* Icons icon */}
-        <TouchableOpacity onPress={() => setImage(null)} style={styles.iconButton}>
-          <FontAwesome name="image" size={20} color="#f39c12" />
-          <Text style={styles.iconText}>Upload</Text>
+        <TouchableOpacity onPress={saveCardToLocalStorage} style={styles.actionButton}>
+          <FontAwesome name="save" size={24} color="#6c5ce7" />
+          <Text style={styles.actionText}>Save</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Text input visibility toggle */}
+      {/* Text input */}
       {isTextInputVisible && (
         <TextInput
-          style={CardComponentStyles.textInput}
-          placeholder="Add a birthday message..."
+          style={styles.textInput}
+          placeholder="Add a message..."
+          placeholderTextColor="#999"
           onChangeText={setText}
           value={text}
         />
       )}
 
-      {/* If in edit mode, show the TextInput again to edit */}
-      {isEditing && (
-        <View>
-          {/* <TextInput
-            style={CardComponentStyles.textInput}
-            placeholder="Edit your message..."
-            onChangeText={setText}
-            value={text}
-          /> */}
-          {/* Font Family Input */}
-          <TextInput
-            style={styles.input}
-            value={fontFamily}
-            onChangeText={setFontFamily}
-            placeholder="Font Family"
-          />
-          {/* Font Size Input */}
-          <TextInput
-            style={styles.input}
-            value={String(fontSize)}
-            keyboardType="numeric"
-            onChangeText={(text) => setFontSize(Number(text))}
-            placeholder="Font Size"
-          />
-          {/* Color Input */}
-          <TextInput
-            style={styles.input}
-            value={color}
-            onChangeText={setColor}
-            placeholder="Text Color"
-          />
-          {/* Position Input */}
-          <TextInput
-            style={styles.input}
-            value={position}
-            onChangeText={setPosition}
-            placeholder="Text Position (left, center, right)"
-          />
-        </View>
-      )}
-
-      {/* Icons selection grid */}
-      {!isEditing && (
-        <View style={styles.iconsGrid}>
-          {birthdayIcons.map((icon) => (
-            <TouchableOpacity
-              key={icon.name}
-              onPress={() => pickIcon(icon.icon)}
-              style={styles.iconButton}
-            >
-              <FontAwesome name={icon.icon} size={20} color="#f39c12" />
-              <Text style={styles.iconText}>{icon.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      )}
-
-      {/* Buttons */}
-      <View style={CardComponentStyles.buttonsContainer}>
-        <View style={CardComponentStyles.buttonBox}>
-          <TouchableOpacity style={CardComponentStyles.button} onPress={saveImage}>
-            <FontAwesome name="save" size={20} color="#fff" />
-            <Text style={CardComponentStyles.buttonText}>Save</Text>
+      {/* Emoji picker */}
+      <View style={styles.emojiGrid}>
+        {emojis.map((emj, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={() => setEmoji(emj)}
+            style={styles.emojiButton}
+          >
+            <Text style={styles.emojiText}>{emj}</Text>
           </TouchableOpacity>
-        </View>
-
-        <View style={CardComponentStyles.buttonBox}>
-          <TouchableOpacity style={CardComponentStyles.button} onPress={() => setImage(null)}>
-            <FontAwesome name="eye" size={20} color="#fff" />
-            <Text style={CardComponentStyles.buttonText}>Preview</Text>
-          </TouchableOpacity>
-        </View>
+        ))}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
-// Styles for the icons row and grid
 const styles = StyleSheet.create({
-  iconRow: {
+  container: {
+    flexGrow: 1,
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+  },
+  cardPreview: {
     alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 10,
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    borderRadius: 12,
+    height: 400, // Increased height for a more card-like appearance
+    marginBottom: 20,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 5,
+    overflow: 'hidden', // Ensure the image doesn't overflow the card
+    position: 'relative', // For positioning the emoji and text
+  },
+  image: {
     width: '100%',
+    height: '100%', // Make the image fill the entire card
+    resizeMode: 'cover', // Ensure the image covers the card while maintaining aspect ratio
+    position: 'absolute', // Position the image behind the text and emoji
   },
-  iconButton: {
-    alignItems: 'center',
-    marginBottom: 10,
-    width: 60,
-    marginHorizontal: 10,
-  },
-  iconText: {
-    fontSize: 12,
+  cardText: {
+    marginTop: 10,
+    fontSize: 28, // Larger font size for better visibility
+    color: '#fff', // White text for better contrast
     textAlign: 'center',
+    fontWeight: 'bold',
+    zIndex: 1, // Ensure text appears above the image
+    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Add text shadow for better readability
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  emoji: {
+    fontSize: 50, // Larger emoji size
+    marginVertical: 10,
+    zIndex: 1, // Ensure emoji appears above the image
+    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Add text shadow for better visibility
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  actionRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  actionButton: {
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+    width: 100, // Fixed width for uniform button size
+  },
+  actionText: {
+    fontSize: 14,
+    color: '#555',
     marginTop: 5,
   },
-  iconsGrid: {
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 20,
+    backgroundColor: '#fff',
+    textAlign: 'center',
+    fontSize: 16,
+    color: '#333',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+    width: '100%', // Full width for better usability
+  },
+  emojiGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     marginTop: 10,
   },
-  input: {
-    height: 30,
-    width:200,
-    borderColor: '#ddd',
-    borderWidth: 1,
-    marginBottom: 5,
-    paddingLeft: 5,
-    marginTop: 5,
+  emojiButton: {
+    alignItems: 'center',
+    margin: 8,
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+    width: 60, // Fixed width for uniform button size
+    height: 60, // Fixed height for uniform button size
+    justifyContent: 'center', // Center the emoji inside the button
+  },
+  emojiText: {
+    fontSize: 28,
   },
 });
 

@@ -19,6 +19,7 @@
     "@react-navigation/drawer": "^6.4.4",
     "@react-navigation/native": "^6.1.18",
     "expo-constants": "~16.0.2",
+    "expo-file-system": "~17.0.1",
     "expo-font": "~12.0.9",
     "expo-image-picker": "~15.0.7",
     "expo-linking": "~6.3.1",
@@ -38,7 +39,8 @@
     "react-native-vector-icons": "^10.2.0",
     "react-native-web": "~0.19.10",
     "typescript": "~5.3.3",
-    "expo": "~51.0.28"
+    "upgrade": "^1.1.0",
+    "expo": "52.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
