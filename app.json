@@ -14,14 +14,21 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.mernprince.birthdaycard"
+      "bundleIdentifier": "com.mernprince.birthdaycard",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "This app uses the photo library to save cards to your gallery."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mernprince.birthdaycard"
+      "package": "com.mernprince.birthdaycard",
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "bundler": "metro",

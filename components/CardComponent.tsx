@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -8,40 +8,43 @@ import {
   ScrollView,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import * as MediaLibrary from 'expo-media-library';
+import ViewShot from 'react-native-view-shot';
 import * as FileSystem from 'expo-file-system';
 
 const CardComponent: React.FC = () => {
   const [text, setText] = useState<string>('');
   const [isTextInputVisible, setIsTextInputVisible] = useState<boolean>(false);
   const [emoji, setEmoji] = useState<string>('🎉');
+  const viewShotRef = useRef<ViewShot>(null);
 
   const emojis = ['🎉', '🎂', '🎁', '❤️', '🌟', '🎈', '🎵', '🍰', '🍔', '🐾'];
 
-  // Save the card to local storage
-  const saveCardToLocalStorage = async () => {
-    const cardData = {
-      text,
-      emoji,
-    };
+  // Request media library permissions
+  const requestMediaLibraryPermission = async () => {
+    const { status } = await MediaLibrary.requestPermissionsAsync();
+    if (status !== 'granted') {
+      alert('Sorry, we need media library permissions to save the card!');
+      return false;
+    }
+    return true;
+  };
 
-    try {
-      const existingCards = JSON.parse(
-        await FileSystem.readAsStringAsync(
-          `${FileSystem.documentDirectory}cards.json`
-        )
-      );
-      const updatedCards = existingCards ? [...existingCards, cardData] : [cardData];
-      await FileSystem.writeAsStringAsync(
-        `${FileSystem.documentDirectory}cards.json`,
-        JSON.stringify(updatedCards)
-      );
-      alert('Card saved successfully!');
-    } catch (error) {
-      await FileSystem.writeAsStringAsync(
-        `${FileSystem.documentDirectory}cards.json`,
-        JSON.stringify([cardData])
-      );
-      alert('Card saved successfully!');
+  // Save the card to the gallery
+  const saveCardToGallery = async () => {
+    const hasPermission = await requestMediaLibraryPermission();
+    if (!hasPermission) return;
+
+    if (viewShotRef.current) {
+      try {
+        const uri = await viewShotRef.current.capture();
+        const asset = await MediaLibrary.createAssetAsync(uri);
+        await MediaLibrary.createAlbumAsync('Birthday Cards', asset, false);
+        alert('Card saved to gallery successfully!');
+      } catch (error) {
+        console.error('Error saving card to gallery:', error);
+        alert('Failed to save card to gallery. Please try again.');
+      }
     }
   };
 
@@ -51,10 +54,12 @@ const CardComponent: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {/* Card preview */}
-      <View style={styles.cardPreview}>
-        <Text style={styles.emoji}>{emoji}</Text>
-        <Text style={styles.cardText}>{text}</Text>
-      </View>
+      <ViewShot ref={viewShotRef} options={{ format: 'png', quality: 1 }}>
+        <View style={styles.cardPreview}>
+          <Text style={styles.emoji}>{emoji}</Text>
+          <Text style={styles.cardText}>{text}</Text>
+        </View>
+      </ViewShot>
 
       {/* Action buttons */}
       <View style={styles.actionRow}>
@@ -63,7 +68,7 @@ const CardComponent: React.FC = () => {
           <Text style={styles.actionText}>Text</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={saveCardToLocalStorage} style={styles.actionButton}>
+        <TouchableOpacity onPress={saveCardToGallery} style={styles.actionButton}>
           <FontAwesome name="save" size={24} color="#6c5ce7" />
           <Text style={styles.actionText}>Save</Text>
         </TouchableOpacity>
