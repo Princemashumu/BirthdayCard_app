@@ -40,13 +40,9 @@
     "react-native-screens": "3.31.1",
     "react-native-vector-icons": "^10.2.0",
     "react-native-web": "~0.19.10",
-<<<<<<< HEAD
     "typescript": "~5.3.3",
     "upgrade": "^1.1.0",
     "expo": "52.0.0"
-=======
-    "typescript": "~5.3.3"
->>>>>>> c93a6a602aa3f7d1069a56c8b03d46574329bd0c
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
