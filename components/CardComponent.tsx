@@ -1,63 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  Image,
   ScrollView,
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
 
 const CardComponent: React.FC = () => {
   const [text, setText] = useState<string>('');
-  const [imageUri, setImageUri] = useState<string | null>(null);
   const [isTextInputVisible, setIsTextInputVisible] = useState<boolean>(false);
   const [emoji, setEmoji] = useState<string>('🎉');
 
   const emojis = ['🎉', '🎂', '🎁', '❤️', '🌟', '🎈', '🎵', '🍰', '🍔', '🐾'];
 
-  // Request permissions on component mount
-  useEffect(() => {
-    (async () => {
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status !== 'granted') {
-        alert('Sorry, we need camera roll permissions to make this work!');
-      }
-    })();
-  }, []);
-
-  // Pick an image from the gallery
-  const pickImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images, // Corrected mediaTypes
-        allowsEditing: true,
-        aspect: [4, 3],
-        quality: 1,
-      });
-
-      console.log(result); // Debugging
-
-      if (!result.canceled) {
-        setImageUri(result.assets[0].uri);
-      } else {
-        alert('Image selection was canceled.');
-      }
-    } catch (error) {
-      console.error('Error picking image:', error);
-      alert('Failed to pick an image. Please try again.');
-    }
-  };
-
   // Save the card to local storage
   const saveCardToLocalStorage = async () => {
     const cardData = {
       text,
-      imageUri,
       emoji,
     };
 
@@ -89,11 +52,6 @@ const CardComponent: React.FC = () => {
     <ScrollView contentContainerStyle={styles.container}>
       {/* Card preview */}
       <View style={styles.cardPreview}>
-        {imageUri ? (
-          <Image source={{ uri: imageUri }} style={styles.image} />
-        ) : (
-          <FontAwesome name="image" size={100} color="#e0e0e0" />
-        )}
         <Text style={styles.emoji}>{emoji}</Text>
         <Text style={styles.cardText}>{text}</Text>
       </View>
@@ -103,11 +61,6 @@ const CardComponent: React.FC = () => {
         <TouchableOpacity onPress={toggleTextInput} style={styles.actionButton}>
           <FontAwesome name="text-height" size={24} color="#6c5ce7" />
           <Text style={styles.actionText}>Text</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={pickImage} style={styles.actionButton}>
-          <FontAwesome name="upload" size={24} color="#6c5ce7" />
-          <Text style={styles.actionText}>Upload</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={saveCardToLocalStorage} style={styles.actionButton}>
@@ -155,7 +108,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#e0e0e0',
     borderRadius: 12,
-    height: 400, // Increased height for a more card-like appearance
+    height: 300, // Adjusted height for a more compact card
     marginBottom: 20,
     backgroundColor: '#fff',
     shadowColor: '#000',
@@ -163,33 +116,18 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 8,
     elevation: 5,
-    overflow: 'hidden', // Ensure the image doesn't overflow the card
-    position: 'relative', // For positioning the emoji and text
-  },
-  image: {
-    width: '100%',
-    height: '100%', // Make the image fill the entire card
-    resizeMode: 'cover', // Ensure the image covers the card while maintaining aspect ratio
-    position: 'absolute', // Position the image behind the text and emoji
+    padding: 20, // Added padding for better spacing
   },
   cardText: {
     marginTop: 10,
     fontSize: 28, // Larger font size for better visibility
-    color: '#fff', // White text for better contrast
+    color: '#333', // Dark text for better contrast
     textAlign: 'center',
     fontWeight: 'bold',
-    zIndex: 1, // Ensure text appears above the image
-    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Add text shadow for better readability
-    textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 2,
   },
   emoji: {
     fontSize: 50, // Larger emoji size
     marginVertical: 10,
-    zIndex: 1, // Ensure emoji appears above the image
-    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Add text shadow for better visibility
-    textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 2,
   },
   actionRow: {
     flexDirection: 'row',
