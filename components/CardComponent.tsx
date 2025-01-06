@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -20,17 +20,36 @@ const CardComponent: React.FC = () => {
 
   const emojis = ['🎉', '🎂', '🎁', '❤️', '🌟', '🎈', '🎵', '🍰', '🍔', '🐾'];
 
+  // Request permissions on component mount
+  useEffect(() => {
+    (async () => {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        alert('Sorry, we need camera roll permissions to make this work!');
+      }
+    })();
+  }, []);
+
   // Pick an image from the gallery
   const pickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images, // Corrected mediaTypes
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
 
-    if (!result.canceled) {
-      setImageUri(result.assets[0].uri);
+      console.log(result); // Debugging
+
+      if (!result.canceled) {
+        setImageUri(result.assets[0].uri);
+      } else {
+        alert('Image selection was canceled.');
+      }
+    } catch (error) {
+      console.error('Error picking image:', error);
+      alert('Failed to pick an image. Please try again.');
     }
   };
 
