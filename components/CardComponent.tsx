@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react'; 
 import {
   View,
   Text,
@@ -16,9 +16,10 @@ const CardComponent: React.FC = () => {
   const [text, setText] = useState<string>('');
   const [isTextInputVisible, setIsTextInputVisible] = useState<boolean>(false);
   const [emoji, setEmoji] = useState<string>('🎉');
+  const [bgColor, setBgColor] = useState<string>('#fff'); // State to manage background color
   const viewShotRef = useRef<ViewShot>(null);
+  const emojis = ['🎉', '🎂', '🎁', '❤️', '🌟', '🎈', '🎵', '🍰', '🍔', '🐾', '🍕', '🍩', '🥳', '🍦', '🌹'];
 
-  const emojis = ['🎉', '🎂', '🎁', '❤️', '🌟', '🎈', '🎵', '🍰', '🍔', '🐾'];
 
   // Request media library permissions
   const requestMediaLibraryPermission = async () => {
@@ -51,11 +52,18 @@ const CardComponent: React.FC = () => {
   // Toggle text input visibility
   const toggleTextInput = () => setIsTextInputVisible(!isTextInputVisible);
 
+  // Change background color of the card
+  const changeBgColor = () => {
+    const colors = ['#FFEB3B', '#FF5722', '#8BC34A', '#03A9F4', '#9C27B0'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    setBgColor(randomColor); // Set a new random background color
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {/* Card preview */}
       <ViewShot ref={viewShotRef} options={{ format: 'png', quality: 1 }}>
-        <View style={styles.cardPreview}>
+        <View style={[styles.cardPreview, { backgroundColor: bgColor }]}>
           <Text style={styles.emoji}>{emoji}</Text>
           <Text style={styles.cardText}>{text}</Text>
         </View>
@@ -71,6 +79,12 @@ const CardComponent: React.FC = () => {
         <TouchableOpacity onPress={saveCardToGallery} style={styles.actionButton}>
           <FontAwesome name="save" size={24} color="#6c5ce7" />
           <Text style={styles.actionText}>Save</Text>
+        </TouchableOpacity>
+
+        {/* Button to change background color */}
+        <TouchableOpacity onPress={changeBgColor} style={styles.actionButton}>
+          <FontAwesome name="paint-brush" size={24} color="#6c5ce7" />
+          <Text style={styles.actionText}>Color</Text>
         </TouchableOpacity>
       </View>
 
@@ -105,8 +119,9 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5',
-  },
+    backgroundColor: 'transparent', // Set to transparent for gradient
+    background: 'linear-gradient(135deg, #6c5ce7, #00bcd4)', // Modern gradient background
+  },  
   cardPreview: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -115,13 +130,12 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     height: 300, // Adjusted height for a more compact card
     marginBottom: 20,
-    backgroundColor: '#fff',
+    padding: 20, // Added padding for better spacing
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
     elevation: 5,
-    padding: 20, // Added padding for better spacing
   },
   cardText: {
     marginTop: 10,

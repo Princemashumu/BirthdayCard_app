@@ -6,7 +6,7 @@ import CardComponent from './components/CardComponent';
 const App: React.FC = () => {
   return (
     <View style={styles.container}>
-      <CardComponent />
+      {/* <CardComponent /> */}
     </View>
   );
 };
