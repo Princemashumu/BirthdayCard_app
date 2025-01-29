@@ -44,7 +44,8 @@
     "react-native-web": "~0.19.10",
     "typescript": "~5.3.3",
     "upgrade": "^1.1.0",
-    "expo-linear-gradient": "~14.0.2"
+    "expo-linear-gradient": "~14.0.2",
+    "lottie-react-native": "7.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
