@@ -90,7 +90,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ selectedAnimation }) => {
             />
           )}
           <Text style={[styles.cardText, { fontSize, color: fontColor }]}>{text}</Text>
-          <Text style={styles.emoji}>{emoji}</Text>
+          <Text style={styles.emoji}>{emoji}{emoji}{emoji}{emoji}{emoji}{emoji}{emoji}{emoji}{emoji}{emoji}</Text>
         </View>
       </ViewShot>
 
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   },
   cardPreview: {
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center', 
     borderWidth: 1,
     borderColor: '#e0e0e0',
     borderRadius: 12,
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   emoji: {
-    fontSize: 50,
+    fontSize: 20,
     marginVertical: 10,
   },
   actionRow: {
