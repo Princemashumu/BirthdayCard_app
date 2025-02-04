@@ -1,147 +1,57 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<html>
-<body>
-<!--StartFragment--><h1 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*24px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Birthday Card App 🎉</h1><p style="margin: calc(var(--ds-md-zoom)*12px)0; font-size: 16.002px; line-height: var(--ds-md-line-height); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">A simple and fun React Native app that allows users to create custom birthday cards with text and emojis. The app also enables users to save their cards to their local phone gallery.</p><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Features ✨</h2><ul style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Customizable Cards</strong>: Add text and select emojis to create personalized birthday cards.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Save to Gallery</strong>: Save your card as an image to your phone's gallery.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>User-Friendly Interface</strong>: Intuitive design with easy-to-use buttons and inputs.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Cross-Platform</strong>: Works on both iOS and Android devices.</p></li></ul><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
-
-<hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Technologies Used 🛠️</h2><ul style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>React Native</strong>: For building the cross-platform mobile app.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Expo</strong>: For simplifying the development and deployment process.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Expo Media Library</strong>: For saving images to the phone's gallery.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>React Native View Shot</strong>: For capturing the card as an image.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>FontAwesome Icons</strong>: For adding icons to the app.</p></li></ul><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Getting Started 🚀</h2><p style="margin: calc(var(--ds-md-zoom)*12px)0; font-size: 16.002px; line-height: var(--ds-md-line-height); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Follow these steps to set up and run the project on your local machine.</p><h3 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*16px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Prerequisites</h3><ul style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Node.js</strong>: Make sure you have Node.js installed. Download it from<span> </span><a href="https://nodejs.org/" target="_blank" rel="noreferrer" style="color: rgb(var(--ds-rgb-link)); transition: box-shadow var(--ds-transition-duration)var(--ds-ease-in-out); border-radius: calc(var(--ds-md-zoom)*6px); border-left: 3px solid rgba(var(--ds-rgba-transparent)); border-right: 3px solid rgba(var(--ds-rgba-transparent)); border-top: 2px solid rgba(var(--ds-rgba-transparent)); border-bottom: 2px solid rgba(var(--ds-rgba-transparent)); margin-left: -3px; margin-right: -3px; text-decoration: none; position: relative;">here</a>.</p></li><li style="margin-top: 4px;"><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Expo CLI</strong>: Install Expo CLI globally by running:</p><div class="md-code-block" bis_skin_checked="1" style="--ds-md-code-block-font-size: calc(var(--ds-md-zoom)*var(--ds-font-size-xsp)); border-radius: calc(var(--ds-md-zoom)*10px); font-size: var(--ds-md-code-block-font-size); line-height: calc(var(--ds-md-code-block-font-size)*1.6); color: rgb(255, 255, 255); background: rgb(24, 29, 40); margin-bottom: 0px;"><div class="md-code-block-banner-wrap" bis_skin_checked="1" style="background-color: rgb(255, 255, 255); position: sticky; top: 0px;"><div class="md-code-block-banner" bis_skin_checked="1" style="padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); color: rgb(255, 255, 255); font-size: var(--ds-md-code-block-font-size); line-height: var(--ds-md-code-block-font-size); border-top-left-radius: calc(var(--ds-md-zoom)*10px); border-top-right-radius: calc(var(--ds-md-zoom)*10px); background: rgb(80, 80, 90); justify-content: space-between; display: flex;"><div class="md-code-block-infostring" bis_skin_checked="1">bash</div><div class="md-code-block-action" bis_skin_checked="1" style="align-items: center; display: flex;"><div class="ds-markdown-code-copy-button" bis_skin_checked="1" style="background-color: rgba(var(--ds-rgba-transparent)); color: inherit; cursor: pointer; border: none; margin: 0px; padding: 0px;">Copy</div></div></div></div><pre style="margin: 0px !important; font-family: var(--ds-font-family-code); overflow: auto; padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); white-space: pre-wrap; word-break: break-all;"><span class="token function" style="color: rgb(136, 192, 208);">npm</span> <span class="token function" style="color: rgb(136, 192, 208);">install</span> <span class="token parameter variable" style="color: rgb(129, 161, 193);">-g</span> expo-cli</pre></div></li></ul><h3 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*16px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Installation</h3><ol style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Clone the Repository</strong>:</p><div class="md-code-block" bis_skin_checked="1" style="--ds-md-code-block-font-size: calc(var(--ds-md-zoom)*var(--ds-font-size-xsp)); border-radius: calc(var(--ds-md-zoom)*10px); font-size: var(--ds-md-code-block-font-size); line-height: calc(var(--ds-md-code-block-font-size)*1.6); color: rgb(255, 255, 255); background: rgb(24, 29, 40); margin-bottom: 0px;"><div class="md-code-block-banner-wrap" bis_skin_checked="1" style="background-color: rgb(255, 255, 255); position: sticky; top: 0px;"><div class="md-code-block-banner" bis_skin_checked="1" style="padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); color: rgb(255, 255, 255); font-size: var(--ds-md-code-block-font-size); line-height: var(--ds-md-code-block-font-size); border-top-left-radius: calc(var(--ds-md-zoom)*10px); border-top-right-radius: calc(var(--ds-md-zoom)*10px); background: rgb(80, 80, 90); justify-content: space-between; display: flex;"><div class="md-code-block-infostring" bis_skin_checked="1">bash</div><div class="md-code-block-action" bis_skin_checked="1" style="align-items: center; display: flex;"><div class="ds-markdown-code-copy-button" bis_skin_checked="1" style="background-color: rgba(var(--ds-rgba-transparent)); color: inherit; cursor: pointer; border: none; margin: 0px; padding: 0px;">Copy</div></div></div></div><pre style="margin: 0px !important; font-family: var(--ds-font-family-code); overflow: auto; padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); white-space: pre-wrap; word-break: break-all;"><span class="token function" style="color: rgb(136, 192, 208);">git</span> clone https://github.com/your-username/birthday-card-app.git
-<span class="token builtin class-name" style="color: rgb(136, 192, 208);">cd</span> birthday-card-app</pre></div></li><li style="margin-top: 4px;"><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Install Dependencies</strong>:</p><div class="md-code-block" bis_skin_checked="1" style="--ds-md-code-block-font-size: calc(var(--ds-md-zoom)*var(--ds-font-size-xsp)); border-radius: calc(var(--ds-md-zoom)*10px); font-size: var(--ds-md-code-block-font-size); line-height: calc(var(--ds-md-code-block-font-size)*1.6); color: rgb(255, 255, 255); background: rgb(24, 29, 40); margin-bottom: 0px;"><div class="md-code-block-banner-wrap" bis_skin_checked="1" style="background-color: rgb(255, 255, 255); position: sticky; top: 0px;"><div class="md-code-block-banner" bis_skin_checked="1" style="padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); color: rgb(255, 255, 255); font-size: var(--ds-md-code-block-font-size); line-height: var(--ds-md-code-block-font-size); border-top-left-radius: calc(var(--ds-md-zoom)*10px); border-top-right-radius: calc(var(--ds-md-zoom)*10px); background: rgb(80, 80, 90); justify-content: space-between; display: flex;"><div class="md-code-block-infostring" bis_skin_checked="1">bash</div><div class="md-code-block-action" bis_skin_checked="1" style="align-items: center; display: flex;"><div class="ds-markdown-code-copy-button" bis_skin_checked="1" style="background-color: rgba(var(--ds-rgba-transparent)); color: inherit; cursor: pointer; border: none; margin: 0px; padding: 0px;">Copy</div></div></div></div><pre style="margin: 0px !important; font-family: var(--ds-font-family-code); overflow: auto; padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); white-space: pre-wrap; word-break: break-all;"><span class="token function" style="color: rgb(136, 192, 208);">npm</span> <span class="token function" style="color: rgb(136, 192, 208);">install</span></pre></div></li><li style="margin-top: 4px;"><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Run the App</strong>:</p><div class="md-code-block" bis_skin_checked="1" style="--ds-md-code-block-font-size: calc(var(--ds-md-zoom)*var(--ds-font-size-xsp)); border-radius: calc(var(--ds-md-zoom)*10px); font-size: var(--ds-md-code-block-font-size); line-height: calc(var(--ds-md-code-block-font-size)*1.6); color: rgb(255, 255, 255); background: rgb(24, 29, 40); margin-bottom: 0px;"><div class="md-code-block-banner-wrap" bis_skin_checked="1" style="background-color: rgb(255, 255, 255); position: sticky; top: 0px;"><div class="md-code-block-banner" bis_skin_checked="1" style="padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); color: rgb(255, 255, 255); font-size: var(--ds-md-code-block-font-size); line-height: var(--ds-md-code-block-font-size); border-top-left-radius: calc(var(--ds-md-zoom)*10px); border-top-right-radius: calc(var(--ds-md-zoom)*10px); background: rgb(80, 80, 90); justify-content: space-between; display: flex;"><div class="md-code-block-infostring" bis_skin_checked="1">bash</div><div class="md-code-block-action" bis_skin_checked="1" style="align-items: center; display: flex;"><div class="ds-markdown-code-copy-button" bis_skin_checked="1" style="background-color: rgba(var(--ds-rgba-transparent)); color: inherit; cursor: pointer; border: none; margin: 0px; padding: 0px;">Copy</div></div></div></div><pre style="margin: 0px !important; font-family: var(--ds-font-family-code); overflow: auto; padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); white-space: pre-wrap; word-break: break-all;"><span class="token function" style="color: rgb(136, 192, 208);">npm</span> start</pre></div></li><li style="margin-top: 4px;"><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Open in Expo Go</strong>:</p><ul style="margin-top: 4px; margin-right: ; margin-bottom: 0px; margin-left: ; padding-left: calc(var(--ds-md-zoom)*24px);"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Scan the QR code displayed in the terminal using the<span> </span><strong>Expo Go</strong><span> </span>app on your iOS or Android device.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Alternatively, you can run the app on an emulator or simulator.</p></li></ul></li></ol><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Usage 🎨</h2><ol style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Add Text</strong>:</p><ul style="margin-top: 4px; margin-right: ; margin-bottom: 0px; margin-left: ; padding-left: calc(var(--ds-md-zoom)*24px);"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Tap the "Text" button to toggle the text input.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Enter your custom message in the input field.</p></li></ul></li><li style="margin-top: 4px;"><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Select Emoji</strong>:</p><ul style="margin-top: 4px; margin-right: ; margin-bottom: 0px; margin-left: ; padding-left: calc(var(--ds-md-zoom)*24px);"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Choose an emoji from the grid to add it to your card.</p></li></ul></li><li style="margin-top: 4px;"><p style="margin: 0px 0px 4px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Save Card</strong>:</p><ul style="margin-top: 4px; margin-right: ; margin-bottom: 0px; margin-left: ; padding-left: calc(var(--ds-md-zoom)*24px);"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Tap the "Save" button to save your card to the phone's gallery.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">You'll receive a confirmation alert once the card is saved.</p></li></ul></li></ol><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Folder Structure 📂</h2><div class="md-code-block" bis_skin_checked="1" style="--ds-md-code-block-font-size: calc(var(--ds-md-zoom)*var(--ds-font-size-xsp)); border-radius: calc(var(--ds-md-zoom)*10px); font-size: var(--ds-md-code-block-font-size); line-height: calc(var(--ds-md-code-block-font-size)*1.6); color: rgb(255, 255, 255); background: rgb(24, 29, 40); margin-bottom: calc(var(--ds-md-zoom)*10px); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><div class="md-code-block-banner-wrap" bis_skin_checked="1" style="background-color: rgb(255, 255, 255); position: sticky; top: 0px;"><div class="md-code-block-banner" bis_skin_checked="1" style="padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); color: rgb(255, 255, 255); font-size: var(--ds-md-code-block-font-size); line-height: var(--ds-md-code-block-font-size); border-top-left-radius: calc(var(--ds-md-zoom)*10px); border-top-right-radius: calc(var(--ds-md-zoom)*10px); background: rgb(80, 80, 90); justify-content: space-between; display: flex;"><div class="md-code-block-infostring" bis_skin_checked="1"></div><div class="md-code-block-action" bis_skin_checked="1" style="align-items: center; display: flex;"><div class="ds-markdown-code-copy-button" bis_skin_checked="1" style="background-color: rgba(var(--ds-rgba-transparent)); color: inherit; cursor: pointer; border: none; margin: 0px; padding: 0px;">Copy</div></div></div></div><pre style="margin: 0px !important; font-family: var(--ds-font-family-code); overflow: auto; padding: calc(var(--ds-md-zoom)*8px)calc(var(--ds-md-zoom)*12px); white-space: pre-wrap; word-break: break-all;">birthday-card-app/
-├── assets/               # Images and icons
-├── components/           # Reusable components
-│   └── CardComponent.tsx # Main card component
-├── App.tsx               # Main app entry point
-├── app.json              # Expo configuration
-├── package.json          # Project dependencies
-└── README.md             # Project documentation</pre></div><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Contributing 🤝</h2><p style="margin: calc(var(--ds-md-zoom)*12px)0; font-size: 16.002px; line-height: var(--ds-md-line-height); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Contributions are welcome! If you'd like to contribute to this project, please follow these steps:</p><ol style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Fork the repository.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Create a new branch (<code style="font-size: 0.875em; font-weight: var(--ds-font-weight-strong); font-family: var(--ds-font-family-code); background-color: var(--ds-md-inline-code-color,#ececec); border-radius: 4px; padding: 0.15rem 0.3rem;">git checkout -b feature/YourFeatureName</code>).</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Commit your changes (<code style="font-size: 0.875em; font-weight: var(--ds-font-weight-strong); font-family: var(--ds-font-family-code); background-color: var(--ds-md-inline-code-color,#ececec); border-radius: 4px; padding: 0.15rem 0.3rem;">git commit -m 'Add some feature'</code>).</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Push to the branch (<code style="font-size: 0.875em; font-weight: var(--ds-font-weight-strong); font-family: var(--ds-font-family-code); background-color: var(--ds-md-inline-code-color,#ececec); border-radius: 4px; padding: 0.15rem 0.3rem;">git push origin feature/YourFeatureName</code>).</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Open a pull request.</p></li></ol><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">License 📄</h2><p style="margin: calc(var(--ds-md-zoom)*12px)0; font-size: 16.002px; line-height: var(--ds-md-line-height); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">This project is licensed under the MIT License. See the<span> </span><a href="https://chat.deepseek.com/a/chat/s/LICENSE" target="_blank" rel="noreferrer" style="color: rgb(var(--ds-rgb-link)); transition: box-shadow var(--ds-transition-duration)var(--ds-ease-in-out); border-radius: calc(var(--ds-md-zoom)*6px); border-left: 3px solid rgba(var(--ds-rgba-transparent)); border-right: 3px solid rgba(var(--ds-rgba-transparent)); border-top: 2px solid rgba(var(--ds-rgba-transparent)); border-bottom: 2px solid rgba(var(--ds-rgba-transparent)); margin-left: -3px; margin-right: -3px; text-decoration: none; position: relative;">LICENSE</a><span> </span>file for details.</p><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Acknowledgments 🙏</h2><ul style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Thanks to<span> </span><a href="https://expo.dev/" target="_blank" rel="noreferrer" style="color: rgb(var(--ds-rgb-link)); transition: box-shadow var(--ds-transition-duration)var(--ds-ease-in-out); border-radius: calc(var(--ds-md-zoom)*6px); border-left: 3px solid rgba(var(--ds-rgba-transparent)); border-right: 3px solid rgba(var(--ds-rgba-transparent)); border-top: 2px solid rgba(var(--ds-rgba-transparent)); border-bottom: 2px solid rgba(var(--ds-rgba-transparent)); margin-left: -3px; margin-right: -3px; text-decoration: none; position: relative;">Expo</a><span> </span>for making React Native development easier.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Thanks to<span> </span><a href="https://fontawesome.com/" target="_blank" rel="noreferrer" style="color: rgb(var(--ds-rgb-link)); transition: box-shadow var(--ds-transition-duration)var(--ds-ease-in-out); border-radius: calc(var(--ds-md-zoom)*6px); border-left: 3px solid rgba(var(--ds-rgba-transparent)); border-right: 3px solid rgba(var(--ds-rgba-transparent)); border-top: 2px solid rgba(var(--ds-rgba-transparent)); border-bottom: 2px solid rgba(var(--ds-rgba-transparent)); margin-left: -3px; margin-right: -3px; text-decoration: none; position: relative; outline: none;">FontAwesome</a><span> </span>for providing free icons.</p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);">Thanks to the React Native community for their amazing tools and libraries.</p></li></ul><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><h2 style="font-weight: var(--ds-font-weight-strong); font-size: calc(var(--ds-md-zoom)*20px); line-height: 1.5; margin: calc(var(--ds-md-zoom)*16px)0 calc(var(--ds-md-zoom)*12px)0; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Contact 📧</h2><p style="margin: calc(var(--ds-md-zoom)*12px)0; font-size: 16.002px; line-height: var(--ds-md-line-height); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">If you have any questions or feedback, feel free to reach out:</p><ul style="margin: calc(var(--ds-md-zoom)*12px)0; padding-left: calc(var(--ds-md-zoom)*24px); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><li><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>Your Name</strong>:<span> </span><a href="mailto:your-email@example.com" target="_blank" rel="noreferrer" style="color: rgb(var(--ds-rgb-link)); transition: box-shadow var(--ds-transition-duration)var(--ds-ease-in-out); border-radius: calc(var(--ds-md-zoom)*6px); border-left: 3px solid rgba(var(--ds-rgba-transparent)); border-right: 3px solid rgba(var(--ds-rgba-transparent)); border-top: 2px solid rgba(var(--ds-rgba-transparent)); border-bottom: 2px solid rgba(var(--ds-rgba-transparent)); margin-left: -3px; margin-right: -3px; text-decoration: none; position: relative;">Your Email</a></p></li><li style="margin-top: 4px;"><p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; font-size: var(--ds-md-font-size); line-height: var(--ds-md-line-height);"><strong>GitHub</strong>:<span> </span><a href="https://github.com/your-username" target="_blank" rel="noreferrer" style="color: rgb(var(--ds-rgb-link)); transition: box-shadow var(--ds-transition-duration)var(--ds-ease-in-out); border-radius: calc(var(--ds-md-zoom)*6px); border-left: 3px solid rgba(var(--ds-rgba-transparent)); border-right: 3px solid rgba(var(--ds-rgba-transparent)); border-top: 2px solid rgba(var(--ds-rgba-transparent)); border-bottom: 2px solid rgba(var(--ds-rgba-transparent)); margin-left: -3px; margin-right: -3px; text-decoration: none; position: relative;">Your GitHub Profile</a></p></li></ul><hr style="height: 1px; margin: calc(var(--ds-md-zoom)*12px)0; background: rgb(var(--ds-rgb-label-3)); border: none; display: block; color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-size: 16.002px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><p style="margin: calc(var(--ds-md-zoom)*12px)0; font-size: 16.002px; line-height: var(--ds-md-line-height); color: rgb(64, 64, 64); font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Noto Sans&quot;, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Oxygen, &quot;Open Sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Enjoy creating birthday cards! 🎂🎈</p><!--EndFragment-->
-</body>
-</html>Birthday Card App 🎉
+# Birthday Card App 🎉
 A simple and fun React Native app that allows users to create custom birthday cards with text and emojis. The app also enables users to save their cards to their local phone gallery.
 
-Features ✨
-Customizable Cards: Add text and select emojis to create personalized birthday cards.
+## APK Download
+[Download the APK](https://expo.dev/accounts/mernprince/projects/birthdaycard/builds/08c4dd96-9d0e-4b25-b535-15b1f50d1a9a)
 
-Save to Gallery: Save your card as an image to your phone's gallery.
+## Features ✨
+- **Customizable Cards:** Add text and select emojis to create personalized birthday cards.
+- **Save to Gallery:** Save your card as an image to your phone's gallery.
+- **User-Friendly Interface:** Intuitive design with easy-to-use buttons and inputs.
+- **Cross-Platform:** Works on both iOS and Android devices.
 
-User-Friendly Interface: Intuitive design with easy-to-use buttons and inputs.
+## Technologies Used 🛠️
+- **React Native:** For building the cross-platform mobile app.
+- **Expo:** For simplifying the development and deployment process.
+- **Expo Media Library:** For saving images to the phone's gallery.
+- **React Native View Shot:** For capturing the card as an image.
+- **FontAwesome Icons:** For adding icons to the app.
 
-Cross-Platform: Works on both iOS and Android devices.
-
-Screenshots 📸
-Home Screen	Card Preview	Save Confirmation
-Home Screen	Card Preview	Save Confirmation
-Technologies Used 🛠️
-React Native: For building the cross-platform mobile app.
-
-Expo: For simplifying the development and deployment process.
-
-Expo Media Library: For saving images to the phone's gallery.
-
-React Native View Shot: For capturing the card as an image.
-
-FontAwesome Icons: For adding icons to the app.
-
-Getting Started 🚀
+## Getting Started 🚀
 Follow these steps to set up and run the project on your local machine.
 
-Prerequisites
-Node.js: Make sure you have Node.js installed. Download it from [here](https://nodejs.org/).
+### Prerequisites
+- **Node.js:** Download and install from [here](https://nodejs.org/).
+- **Expo CLI:** Install globally by running:
+  ```bash
+  npm install -g expo-cli
+  ```
 
-Expo CLI: Install Expo CLI globally by running:
+### Installation
+1. Clone the Repository:
+   ```bash
+   git clone https://github.com/your-username/birthdaycard_app.git
+   cd birthdaycard_app
+   ```
+2. Install Dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the App:
+   ```bash
+   npm start
+   ```
+4. Open in Expo Go:
+   - Scan the QR code displayed in the terminal using the Expo Go app on your iOS or Android device.
+   - Alternatively, run the app on an emulator or simulator.
 
-bash
-Copy
-npm install -g expo-cli
-Installation
-Clone the Repository:
+## Usage 🎨
+- **Add Text:** Tap the "Text" button to toggle the text input and enter your custom message.
+- **Select Emoji:** Choose an emoji from the grid to add it to your card.
+- **Save Card:** Tap the "Save" button to save your card to the phone's gallery. A confirmation alert will appear.
 
-bash
-Copy
-git clone https://github.com/your-username/birthday-card-app.git
-cd birthday-card-app
-Install Dependencies:
-
-bash
-Copy
-npm install
-Run the App:
-
-bash
-Copy
-npm start
-Open in Expo Go:
-
-Scan the QR code displayed in the terminal using the Expo Go app on your iOS or Android device.
-
-Alternatively, you can run the app on an emulator or simulator.
-
-Usage 🎨
-Add Text:
-
-Tap the "Text" button to toggle the text input.
-
-Enter your custom message in the input field.
-
-Select Emoji:
-
-Choose an emoji from the grid to add it to your card.
-
-Save Card:
-
-Tap the "Save" button to save your card to the phone's gallery.
-
-You'll receive a confirmation alert once the card is saved.
-
-Folder Structure 📂
-Copy
+## Folder Structure 📚
+```
 birthday-card-app/
 ├── assets/               # Images and icons
 ├── components/           # Reusable components
@@ -150,97 +60,32 @@ birthday-card-app/
 ├── app.json              # Expo configuration
 ├── package.json          # Project dependencies
 └── README.md             # Project documentation
-Contributing 🤝
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+```
 
-Fork the repository.
+## Contributing 🤝
+Contributions are welcome! Follow these steps:
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+5. Open a pull request.
 
-Create a new branch (git checkout -b feature/YourFeatureName).
+## License 📚
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Commit your changes (git commit -m 'Add some feature').
-
-Push to the branch (git push origin feature/YourFeatureName).
-
-Open a pull request.
-
-License 📄
-This project is licensed under the MIT License. See the [LICENSE](https://chat.deepseek.com/a/chat/s/LICENSE) file for details.
-
-Acknowledgments 🙏
-Thanks to [Expo](https://expo.dev/) for making React Native development easier.
-
-Thanks to [FontAwesome](https://fontawesome.com/) for providing free icons.
-
-Thanks to the React Native community for their amazing tools and libraries.
-
-
+## Acknowledgments 🙏
+- Thanks to [Expo](https://expo.dev/) for making React Native development easier.
+- Thanks to [FontAwesome](https://fontawesome.com/) for providing free icons.
+- Thanks to the React Native community for their amazing tools and libraries.
 
 Enjoy creating birthday cards! 🎂🎈
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
